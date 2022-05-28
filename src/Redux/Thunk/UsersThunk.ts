@@ -1,14 +1,14 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
+import { UserTypes } from "../../ActionTypes";
 import { JsonPlaceholderAPIWrapper } from "../../Api/placeholderApi";
 import { setUsers } from "../Slices/UsersSlice";
-
 
 const jsonPlaceholderApi = JsonPlaceholderAPIWrapper({
   timeout: 6000,
 });
 
 export const getUsersDispatch = createAsyncThunk(
-  "json/user",
+  UserTypes.GET_USER,
   async function (_, { dispatch }) {
     jsonPlaceholderApi
       .getUsers()

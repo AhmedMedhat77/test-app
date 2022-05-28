@@ -1,10 +1,10 @@
 import { Button, Space, Tag } from "antd";
 import React from "react";
+import { Link } from "react-router-dom";
 
 import TableUsers from "../../Components/Tables/CustomTable";
 import { useAppDispatch, useAppSelector } from "../../Redux";
 import { getUsersDispatch } from "../../Redux/Thunk/UsersThunk";
-
 
 const Home = function () {
   const dispatch = useAppDispatch();
@@ -16,6 +16,8 @@ const Home = function () {
 
   return (
     <div className="">
+      <Link to="/todo">Todo</Link>
+      <Link to="/todoredux">TodoRedux</Link>
       <TableUsers
         data={users}
         columns={[

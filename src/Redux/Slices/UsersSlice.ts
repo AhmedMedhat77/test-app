@@ -4,6 +4,8 @@ const initialState = {
   data: [] as any[],
 };
 
+
+
 const UsersSlice = createSlice({
   name: "users",
   initialState: initialState,
