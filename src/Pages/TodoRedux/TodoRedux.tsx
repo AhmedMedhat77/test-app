@@ -50,11 +50,14 @@ const TodoRedux = () => {
       if (index === -1) {
         return;
       }
+      const newData = [...data];
+      newData[index] = { ...newData[index], text: editedText };
 
-      data[index] = { ...data[index], text: editedText };
+      dispatch(setTodo({ data: newData }));
+
       onCancelClick();
     },
-    [data, editedText, onCancelClick]
+    [data, dispatch, editedText, onCancelClick]
   );
 
   const onAddClick = () => {

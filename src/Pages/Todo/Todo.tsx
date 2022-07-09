@@ -57,7 +57,7 @@ const Todo = () => {
   };
 
   const renderItems = React.useMemo(() => {
-    return data.map((item, index) => {
+    return data.map((item, _index) => {
       return (
         <div
           key={item.id}
